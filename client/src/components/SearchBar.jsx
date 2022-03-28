@@ -4,7 +4,15 @@ import './SearchBar.css'
 export default function SearchBar() {
     return (
       <div className='SearchBar'>
-          <h1>hola</h1>
+        <form onSubmit={(e) => {
+          e.preventDefault();
+          }}>
+          <input
+            type="text"
+            placeholder="Raza de perro..."
+          />
+          <input type="submit" value="BUSCAR" />
+        </form>
       </div>
     );
 };

@@ -11,3 +11,13 @@ export function getDogs(){
         })
     }
 }
+export function FilterCreated(){
+    return async function(dispatch){
+        let perros=await axios.get(api);
+        perros=perros.data.filter((e)=> typeof e.id!=='number')
+        return dispatch({
+            type: 'GET_CREATED',
+            payload: perros
+        })
+    }
+}

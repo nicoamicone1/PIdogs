@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import Listado from './components/Listado.jsx'
 import {useDispatch, useSelector} from 'react-redux'
 import {getDogs} from './actions/index.js'
+import Filter from './components/Filter.jsx'
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
         <div>
           <SearchBar/>
           <Listado perros={perros}/>
+          <Filter/>
         </div>
       </Route>
       

@@ -1,10 +1,15 @@
 import React from 'react';
+import './Perro.css'
 
-export default function Perro(perrito) {
-    console.log(perrito.perrito[0])
+export default function Perro({perro}) {
     return (
-      <div>
-          <p>Aca va el perro: {perrito.perrito[0][1].name}</p>
+      <div className='Container'>
+        <div className='Card'>
+          <img src={perro.image.url} alt='perroimg'/>
+          <span>{perro.name}</span>
+          <p>Temperamento: {perro.temperament}</p>
+          <p>Peso(kg): {perro.weight.metric}</p>
+        </div>
       </div>
     );
 };

@@ -10,6 +10,11 @@ function rootReducer(state=initialState,action){
                 ...state,dogs:action.payload
             }
         }
+        case 'GET_CREATED':{
+            return{
+                ...state,dogs:action.payload
+            }
+        }
         default: return state;
     }
 }

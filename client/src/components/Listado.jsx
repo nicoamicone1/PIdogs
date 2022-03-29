@@ -1,5 +1,7 @@
 import React from 'react'
 import { useState,useEffect} from 'react';
+import Perro from './Perro.jsx'
+import './Listado.css'
 
 export default function Listado({perros}) {
     const [page,setPage]=useState(8)
@@ -22,10 +24,10 @@ export default function Listado({perros}) {
     }
     
     return (
-      <div>
-        <ul>{
+      <div className='container'>
+        <ul className='list'>{
           dogs.map(e=>
-            <li>{e.name}</li>
+            <p><Perro perro={e}/></p>
           )
         }
         </ul>

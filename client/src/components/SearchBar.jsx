@@ -11,7 +11,7 @@ export default function SearchBar() {
             type="text"
             placeholder="Raza de perro..."
           />
-          <input type="submit" value="BUSCAR" />
+          <input type="submit" value='O'/>
         </form>
       </div>
     );

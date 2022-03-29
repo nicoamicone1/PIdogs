@@ -4,18 +4,18 @@ import {Route} from 'react-router-dom'
 import SearchBar from './components/SearchBar.jsx'
 import { Link } from 'react-router-dom';
 import Listado from './components/Listado.jsx'
+import {useDispatch, useSelector} from 'react-redux'
+import {getDogs} from './actions/index.js'
 
 
 function App() {
-  const [perros,setPerros]=React.useState([]);
-  const api='https://api.thedogapi.com/v1/breeds'
+  const dispatch=useDispatch();
+  const perros=useSelector((state)=>state.dogs)
   
   React.useEffect(()=>{
-    fetch(api).then(r=>r.json()).then(res=>{
-      setPerros((oldPerros)=>[...oldPerros,res])
-      });
-  },[])
-  
+    dispatch(getDogs())
+  },[dispatch])
+
   return (
     <div className='App'>
       <Route exact path='/'>

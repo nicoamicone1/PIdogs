@@ -7,7 +7,7 @@ export default function Perro({perro}) {
         <div className='Card'>
           <img src={perro.image.url} alt='perroimg'/>
           <span>{perro.name}</span>
-          <p>Temperamento: {perro.temperament}</p>
+          <p>Temperament: {perro.temperament}</p>
           <p>Peso(kg): {perro.weight.metric}</p>
         </div>
       </div>

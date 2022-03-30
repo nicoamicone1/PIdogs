@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const api='https://api.thedogapi.com/v1/breeds';
+const api='http://localhost:3001/dogs';
 
 export function getDogs(){
     return async function(dispatch){
@@ -20,4 +20,24 @@ export function FilterCreated(){
             payload: perros
         })
     }
+}
+export function FilterTemp(payload){
+        return ({
+            type: 'GET_BYTEMP',
+            payload
+        })
+}
+
+export function FilterDogs(payload){
+    return ({
+        type: 'FILTER_DOGS',
+        payload
+    })
+}
+
+export function SortLetter(payload){
+    return ({
+        type: 'SORT_LETTER',
+        payload
+    })
 }

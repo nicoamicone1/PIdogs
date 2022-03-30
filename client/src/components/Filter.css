@@ -1,2 +1,7 @@
 .Container{
+    top: 40px; 
+    left: 20px;
+}
+.selector{
+    height:70px;
 }

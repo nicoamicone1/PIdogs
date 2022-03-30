@@ -28,10 +28,12 @@ function App() {
         </div>
       </Route>
       <Route exact path='/find'>
-        <div>
+        <div className='Busqueda'>
           <SearchBar/>
-          <Listado perros={perros}/>
           <Filter/>
+        </div>
+        <div className='List'>
+          <Listado perros={perros}/>
         </div>
       </Route>
       

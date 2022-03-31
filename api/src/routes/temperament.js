@@ -27,11 +27,15 @@ const check=async function(){
             Temperament.create({name:e})
         })
     }
-    return Temperament.findAll({attributes:['name']})
+    let returned=await Temperament.findAll({attributes:['name']})
+    return returned
 }
 
 server.get("/",async (req,res)=>{
-    let final=await check()
+    let final=[]
+    while(final[0]==undefined){
+        final=await check()
+    }
     res.send(final)
 })
 

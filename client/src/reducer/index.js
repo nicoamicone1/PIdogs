@@ -1,3 +1,4 @@
+import ordenamiento from '../utils/ordenamiento.js'
 
 const initialState={
     dogs:[],
@@ -40,6 +41,12 @@ function rootReducer(state=initialState,action){
             state.dogs.forEach(e=>final.push(e))
             return{
                 ...state,dogs:final.reverse()
+            }
+        }
+        case 'SORT_WEIGHT':{
+            let final=ordenamiento(state.dogs,'maM')
+            return{
+                ...state,dogs:final
             }
         }
         default: return state;

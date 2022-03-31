@@ -1,8 +1,9 @@
 import React from 'react';
 import './Filter.css'
 import {useDispatch,useSelector} from 'react-redux'
-import {FilterTemp,getDogs,SortLetter} from '../actions/index.js'
-import axios from 'axios'
+import {FilterTemp,getDogs,SortLetter,SortWeight} from '../actions/index.js'
+import axios from 'axios';
+
 
 export default function Filter() {
     const dispatch=useDispatch()
@@ -32,8 +33,6 @@ export default function Filter() {
                 <option value={e.name} key={e.name}>{e.name}</option>
                 )}
           </select>
-          <input type='checkbox' value='Created' id='createdcheck'/>
-          <label for="createdcheck">Only created Dogs</label>
           <button onClick={()=>{
               dispatch(getDogs())
               document.getElementById('letterswitch').value='Descendente'
@@ -42,6 +41,12 @@ export default function Filter() {
             <option value='Descendente'>A-Z</option>
             <option value='Ascendente'>Z-A</option>
           </select>
+          <select id='weightswitch' className='selector' onChange={(e)=>dispatch(SortWeight(e.target.value))}>
+            <option value='Desc'>Mayor a menor</option>
+            <option value='Asc'>Menor a mayor</option>
+          </select>
+          <input type='checkbox' value='Created' id='createdcheck'/>
+          <label for="createdcheck">Only created Dogs</label>
       </div>
     );
 };

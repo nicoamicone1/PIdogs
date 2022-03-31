@@ -41,3 +41,10 @@ export function SortLetter(payload){
         payload
     })
 }
+
+export function SortWeight(payload){
+    return ({
+        type: 'SORT_WEIGHT',
+        payload
+    })
+}

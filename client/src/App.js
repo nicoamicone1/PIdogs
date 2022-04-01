@@ -7,6 +7,8 @@ import Listado from './components/Listado.jsx'
 import {useDispatch, useSelector} from 'react-redux'
 import {getDogs} from './actions/index.js'
 import Filter from './components/Filter.jsx'
+import Detail from './components/Detail.jsx'
+import Create from './components/Create.jsx'
 
 
 function App() {
@@ -17,6 +19,7 @@ function App() {
     dispatch(getDogs())
   },[dispatch])
 
+  
   return (
     <div className='App'>
       <Route exact path='/'>
@@ -36,6 +39,8 @@ function App() {
           <Listado perros={perros}/>
         </div>
       </Route>
+      <Route path='/detail/:id' render={(props)=><Detail id={props.match.params.id}/>}/>
+      <Route path='/create' render={()=><Create/>}/>
       
     </div>
   );

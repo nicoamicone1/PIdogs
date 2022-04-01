@@ -43,7 +43,7 @@ export default function Filter() {
           </select>
           <select id='weightswitch' className='selector' onChange={(e)=>dispatch(SortWeight(e.target.value))}>
             <option value='Desc'>Mayor a menor</option>
-            <option value='Asc'>Menor a mayor</option>
+            <option value='maM'>Menor a mayor</option>
           </select>
           <input type='checkbox' value='Created' id='createdcheck'/>
           <label for="createdcheck">Only created Dogs</label>

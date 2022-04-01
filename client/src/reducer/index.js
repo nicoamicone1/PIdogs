@@ -3,7 +3,8 @@ import ordenamiento from '../utils/ordenamiento.js'
 const initialState={
     dogs:[],
     allDogs:[],
-    busquedas:[]
+    busquedas:[],
+    detail:[]
 }
 
 function rootReducer(state=initialState,action){
@@ -13,7 +14,8 @@ function rootReducer(state=initialState,action){
                 ...state,
                 dogs:action.payload,
                 allDogs:action.payload,
-                busquedas:[]
+                busquedas:[],
+                detail:[]
             }
         }
         case 'GET_CREATED':{
@@ -44,9 +46,16 @@ function rootReducer(state=initialState,action){
             }
         }
         case 'SORT_WEIGHT':{
-            let final=ordenamiento(state.dogs,'maM')
+            let final=[]
+            if(action.payload==='maM')final=ordenamiento(state.dogs,'maM');
+            else final=ordenamiento(state.dogs)
             return{
                 ...state,dogs:final
+            }
+        }
+        case 'GET_DETAIL':{
+            return{
+                ...state,detail:action.payload
             }
         }
         default: return state;

@@ -21,14 +21,14 @@ export default function Ordenamiento(array,orden){
         let elem=e.weight.metric.split(' - ');
         if(elem[1]){
             if(Number.isNaN(parseInt(elem[0]))){
-                pesos.push({comp:`${parseInt(elem[1])-3}`+`${parseInt(elem[1])}`,e});
+                pesos.push({comp:parseInt(elem[1]-3+elem[1]),e});
             }
             else pesos.push({comp:parseInt(elem.join('')),e});
         }
         else{
             let n=elem[0]
             if(Number.isNaN(parseInt(n)))excludes.push(e);
-            else pesos.push({comp:`${parseInt(n)}`+`${parseInt(n)}`,e});
+            else pesos.push({comp:parseInt(n+n),e});
         }
     })
     

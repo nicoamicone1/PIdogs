@@ -4,11 +4,15 @@ const api='http://localhost:3001/dogs';
 
 export function getDogs(){
     return async function(dispatch){
-        let perros=await axios.get(api);
-        return dispatch({
+        try {
+            let perros=await axios.get(api);
+            return dispatch({
             type: 'GET_DOGS',
             payload: perros.data
         })
+        } catch (error) {
+            console.log(error)
+        }
     }
 }
 export function FilterCreated(){
@@ -47,4 +51,17 @@ export function SortWeight(payload){
         type: 'SORT_WEIGHT',
         payload
     })
+}
+export function getDetail(payload){
+    return async function(dispatch){
+        try {
+            let perros=await axios.get(`${api}/${payload}`);
+            return dispatch({
+            type: 'GET_DETAIL',
+            payload: perros.data
+        })
+        } catch (error) {
+            console.log(error)
+        }
+    }
 }

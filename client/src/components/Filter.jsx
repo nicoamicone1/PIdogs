@@ -36,6 +36,7 @@ export default function Filter() {
           <button onClick={()=>{
               dispatch(getDogs())
               document.getElementById('letterswitch').value='Descendente'
+              document.getElementById('weightswitch').value='Desc'
               }}>RESET</button>
           <select id='letterswitch' className='selector' onChange={(e)=>{Letter(e)}}>
             <option value='Descendente'>A-Z</option>

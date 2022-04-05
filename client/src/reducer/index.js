@@ -39,10 +39,15 @@ function rootReducer(state=initialState,action){
             }
         }
         case 'SORT_LETTER':{
-            let final=[]
-            state.dogs.forEach(e=>final.push(e))
-            return{
-                ...state,dogs:final.reverse()
+            let final=state.dogs.sort((a,b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0))
+            let final2=[]
+            if(action.payload==='ZA'){
+                final.reverse().forEach(e=>final2.push(e))
+                return {...state,dogs:final2}
+            }
+            else{
+                final.forEach(e=>final2.push(e))
+                return {...state,dogs:final2}
             }
         }
         case 'SORT_WEIGHT':{

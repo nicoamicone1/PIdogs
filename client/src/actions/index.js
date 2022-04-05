@@ -6,9 +6,10 @@ export function getDogs(){
     return async function(dispatch){
         try {
             let perros=await axios.get(api);
+            let a=perros.data.sort((a,b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0))
             return dispatch({
             type: 'GET_DOGS',
-            payload: perros.data
+            payload: a
         })
         } catch (error) {
             console.log(error)

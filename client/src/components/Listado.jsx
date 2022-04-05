@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState,useEffect} from 'react';
+import {useSelector} from 'react-redux'
 import Perro from './Perro.jsx'
 import './Listado.css'
 
@@ -8,6 +9,7 @@ export default function Listado({perros}) {
     const [page,setPage]=useState(1)
     const [buttons,setButtons]=useState([])
     const[dogs,setDogs]=useState(perros.slice(0,dogsxpage))
+    const busquedas=useSelector(state=>state.busquedas)
     
     useEffect(()=>{
       let indexD=dogsxpage*(page-1);
@@ -29,6 +31,7 @@ export default function Listado({perros}) {
 
     return (
       <div className='container'>
+        {busquedas[0]? busquedas.map(e=><p>{e.temps? e.temps: e.name}</p>) : null}
         <ul className='list'>{
           dogs.map(e=>
             <li key={e.name}><Perro perro={e}/></li>

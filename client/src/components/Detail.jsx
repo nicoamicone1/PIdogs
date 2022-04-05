@@ -11,14 +11,17 @@ export default function Detail({id}) {
         // eslint-disable-next-line
     },[dispatch])
     const perro=useSelector((state)=>state.detail)
-    console.log (perro)
+    const fix=()=>{
+        let arr=perro[0].temperaments.map(e=>e.name);
+        return arr.join(', ');
+    }
     return (
        perro[0]?
         <div className='Container'>
             <div className='Card'>
-                <img src={perro[0].image.url} alt='perroimg'/>
+                <img src={perro[0].image? perro[0].image.url : 'https://i.pinimg.com/originals/6d/f1/f8/6df1f8b5eb595358becaad1a8264e966.png' } alt='perroimg'/>
                 <span>{perro[0].name}</span>
-                <p>Temperament: {perro[0].temperament}</p>
+                <p>Temperament: {perro[0].temperament? perro[0].temperament : fix()}</p>
                 <p>Peso(kg): {perro[0].weight.metric}</p>
             </div>
         </div>

@@ -19,10 +19,12 @@ function App() {
     dispatch(getDogs())
   },[dispatch])
 
-  
   return (
     <div className='App'>
       <Route exact path='/'>
+          <video muted loop autoPlay id="fullscreen-video">
+          <source src="video2.mp4" type="video/mp4"/>
+          </video>
         <div className='inicio'>
           <h1>Welcome!</h1>
           <Link to='/find'>
@@ -31,12 +33,14 @@ function App() {
         </div>
       </Route>
       <Route exact path='/find'>
-        <div className='Busqueda'>
-          <SearchBar/>
-          <Filter/>
-        </div>
-        <div className='List'>
-          <Listado perros={perros}/>
+        <div className='FilterContainer'>
+          <div className='Busqueda'>
+            <SearchBar/>
+            <Filter/>
+          </div>
+          <div className='List'>
+            <Listado perros={perros}/>
+          </div>
         </div>
       </Route>
       <Route path='/detail/:id' render={(props)=><Detail id={props.match.params.id}/>}/>

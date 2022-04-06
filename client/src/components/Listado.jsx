@@ -42,7 +42,7 @@ export default function Listado({perros}) {
           )
         }
         </ul>
-        <nav onClick={(e)=>setPage(()=>e.target.value)}>
+        <nav className='Paginado' onClick={(e)=>setPage(()=>e.target.value)}>
           {
             buttons.map(e=>
               <button key={buttons.indexOf(e)+1} value={buttons.indexOf(e)+1}>{buttons.indexOf(e)+1}</button>

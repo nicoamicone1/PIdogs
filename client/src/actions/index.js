@@ -16,10 +16,11 @@ export function getDogs(){
         }
     }
 }
-export function FilterCreated(){
+export function FilterCreated(payload){
     return async function(dispatch){
         let perros=await axios.get(api);
-        perros=perros.data.filter((e)=> typeof e.id!=='number')
+        if(payload==='yes'){perros=perros.data.filter((e)=> typeof e.id!=='number')}
+        else{perros=perros.data}
         return dispatch({
             type: 'GET_CREATED',
             payload: perros

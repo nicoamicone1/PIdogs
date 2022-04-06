@@ -31,7 +31,11 @@ export default function Listado({perros}) {
 
     return (
       <div className='container'>
-        {busquedas[0]? busquedas.map(e=><p>{e.temps? e.temps: e.name}</p>) : null}
+        {busquedas[0]? 
+        <div>
+          <p>Resultados para: </p>
+          {busquedas.map(e=><span>{e.temps? e.temps: e.name}</span>)}
+        </div> : null}
         <ul className='list'>{
           dogs.map(e=>
             <li key={e.name}><Perro perro={e}/></li>

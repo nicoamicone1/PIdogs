@@ -1,5 +1,5 @@
 body {
-  background-image: url('https://www.1zoom.me/big2/352/314068-Lastochka.jpg');
+  /* background-image: url('https://www.1zoom.me/big2/352/314068-Lastochka.jpg'); */
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -9,9 +9,34 @@ body {
     sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    margin:0;
+    padding:0;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+html{
+  margin:0;
+  padding:0;
+}
+
+#fullscreen-video{
+  margin:0;
+  position:fixed;
+  z-index: -1;
+}
+@media(min-aspect-ratio: 16/9){
+  #fullscreen-video{
+    width:100%;
+    height:auto;
+  }
+}
+@media(ax-aspect-ratio: 16/9){
+  #fullscreen-video{
+    width:auto;
+    height:100%;
+  }
 }

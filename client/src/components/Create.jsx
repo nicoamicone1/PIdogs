@@ -91,12 +91,13 @@ export default function Create() {
         <form onSubmit={(e)=>{
           e.preventDefault();
           axios.post('http://localhost:3001/dog',{
-            "name": obj.name,
+            "name": `${obj.name[0].toUpperCase()+obj.name.slice(1)}`,
             "weight": {"metric":`${obj.pes_min} - ${obj.pes_max}`},
             "height":{"metric":`${obj.alt_min} - ${obj.alt_max}`},
             "life_span": `${obj.lifespan_min} - ${obj.lifespan_max}`,
             "temps": ts
-          })
+          });
+          alert('Creado con exito!')
         }}>
             <input type='text' placeholder='Nombre' name='namecreated'onChange={(e)=>change(e)}/>
             {error.name? <p>{error.name}</p>: null}

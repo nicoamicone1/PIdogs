@@ -34,12 +34,16 @@
 }
 .inicio{
   position: absolute;
-  top: 50vh;
-  right: 25vw;
+  top: 50%;
+  right: 75%;
+}
+.inicio h1{
+  margin:0,0,10px,0;
 }
 .botoninicio{
-  height: 10vh;
-  width: 15vw;
+  margin:0;
+  height: 40px;
+  width:100%;
   background-color: #000000;
   border: none;
   color: white;
@@ -64,3 +68,4 @@
 .inicio{
   text-align: center;
 }
+

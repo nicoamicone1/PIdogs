@@ -32,9 +32,9 @@ export default function Listado({perros}) {
     return (
       <div className='container'>
         {busquedas[0]? 
-        <div>
+        <div className='Busquedas'>
           <p>Resultados para: </p>
-          {busquedas.map(e=><span>{e.temps? e.temps: e.name}</span>)}
+          {busquedas.slice(0,5).map(e=><span> {e.temps? e.temps: e.name}</span>)}
         </div> : null}
         <ul className='list'>{
           dogs.map(e=>
@@ -42,13 +42,13 @@ export default function Listado({perros}) {
           )
         }
         </ul>
-        <nav className='Paginado' onClick={(e)=>setPage(()=>e.target.value)}>
+        <ul className='Paginado' onClick={(e)=>setPage(()=>e.target.value)}>
           {
             buttons.map(e=>
-              <button key={buttons.indexOf(e)+1} value={buttons.indexOf(e)+1}>{buttons.indexOf(e)+1}</button>
+              <li className={buttons.indexOf(e)+1===page?'active':null}key={buttons.indexOf(e)+1} value={buttons.indexOf(e)+1}>{buttons.indexOf(e)+1}</li>
               )
           }
-        </nav>
+        </ul>
       </div>
     );
 };

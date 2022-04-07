@@ -1,4 +1,6 @@
 .SearchBar{
+    display: block;
+    text-align: center;
     background: transparent;
     border-radius:25px;
     opacity: 0.7;

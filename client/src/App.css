@@ -74,7 +74,7 @@
 .botoninicio {
   display: inline-block;
   border-radius: 4px;
-  background-color: #f4511e;
+  background-color: rgb(1,40,83);
   border:none;
   color: #FFFFFF;
   text-align: center;
@@ -87,7 +87,7 @@
 
 .botoninicio:hover{
   background-color: transparent;
-  border:3px solid #f4511e;
+  border:3px solid rgb(1,40,83);
 }
 .Busqueda{
   position: fixed;

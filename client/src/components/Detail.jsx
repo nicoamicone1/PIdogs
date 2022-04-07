@@ -1,6 +1,7 @@
 import React from 'react';
 import {useSelector,useDispatch} from 'react-redux'
 import {getDetail} from '../actions/index.js'
+import './Detail.css'
 
 
 export default function Detail({id}) {
@@ -17,8 +18,8 @@ export default function Detail({id}) {
     }
     return (
        perro[0]?
-        <div className=''>
-            <div className=''>
+        <div className='Cont'>
+            <div className='Carta'>
                 <img src={perro[0].image? perro[0].image.url : 'https://i.pinimg.com/originals/6d/f1/f8/6df1f8b5eb595358becaad1a8264e966.png' } alt='perroimg'/>
                 <span>{perro[0].name}</span>
                 <p>Temperament: {perro[0].temperament? perro[0].temperament : fix()}</p>

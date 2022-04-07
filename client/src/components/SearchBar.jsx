@@ -8,6 +8,7 @@ export default function SearchBar() {
     const dispatch=useDispatch()
 
     function FindPerros(barra){
+      if(barra==='')return;
       dispatch(FilterDogs(barra))
     }
     return (

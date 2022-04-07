@@ -7,10 +7,56 @@
     padding-inline-start: 0;
 }
 .Paginado{
-    display: flex;
-    justify-content: space-between;
+    text-align: center;
+    padding: 0;
 }
-.Paginado button{
-    border:none;
-    background-color:red;
+.Paginado ul{
+    display: flex;
+    justify-content: center;
+    margin:0;
+}
+.Paginado li {
+    display: inline-block;
+    background-color: white;
+    opacity:0.7;
+    width:2vw;
+    height:4vh;
+    text-align: center;
+    transition: background-color .3s;
+}
+.Paginado li.active {
+    background-color: rgb(0, 119, 255);
+}
+
+.Paginado li:hover:not(.active) {background-color: #ddd;}
+
+.Paginado li:first-child {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+.Paginado li:last-child {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+.Busquedas {
+    background-color:white;
+    opacity:0.8;
+    border-radius: 10px;
+    padding-left:1vw;
+    width:50vw;
+    height:10vh;
+}
+.Busquedas p{
+    display:inline-block;
+    font-size: 3vh;
+}
+.Busquedas span{
+    display: inline-block;
+    background-color: rgb(3, 16, 51);
+    border-radius: 8px;
+    color:white;
+    font-size:2vh;
+    margin:1vh;
+    padding:0.5vh;
+    text-align: center;
 }

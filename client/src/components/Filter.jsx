@@ -35,31 +35,40 @@ export default function Filter() {
     }
     return (
       <div className='Container'>
-          <select id='tempswitch' className='selector' onChange={(e)=>FiltroTemp(e)}>
-              <option value='All'>None</option>
-              {temps.map(e=>
-                <option value={e.name} key={e.name}>{e.name}</option>
-                )}
-          </select>
+        <div className='filterbtns'>
           <button onClick={()=>{
-              dispatch(getDogs())
-              document.getElementById('letterswitch').value='AZ'
-              document.getElementById('weightswitch').value='def'
-              }}>RESET</button>
-          <select id='letterswitch' className='selector' onChange={(e)=>{Letter(e)}}>
-            <option value='AZ'>A-Z</option>
-            <option value='ZA'>Z-A</option>
-          </select>
-          <select id='weightswitch' className='selector' onChange={(e)=>Peso(e)}>
-            <option value='def'>Filtrar por peso</option>
-            <option value='Desc'>Mayor a menor</option>
-            <option value='maM'>Menor a mayor</option>
-          </select>
-          <input type='checkbox' value='Created' id='createdcheck' onClick={()=>Created()}/>
-          <label for="createdcheck">Only created Dogs</label>
+          dispatch(getDogs())
+          document.getElementById('letterswitch').value='AZ'
+          document.getElementById('weightswitch').value='def'
+          }}>RESET</button>
           <Link to='/create'>
-            <button>CREAR</button>
+            <button>CREATE</button>
           </Link>
+          <label class="switch">
+            <input type='checkbox' value='Created' id='createdcheck' onClick={()=>Created()}/>
+            <span class="slider round"></span>
+          </label>
+          <label for="createdcheck">Created</label>
+        </div>
+
+        <div className='switchs'>
+          <select id='tempswitch' className='selector' onChange={(e)=>FiltroTemp(e)}>
+                <option value='All'>None</option>
+                {temps.map(e=>
+                  <option value={e.name} key={e.name}>{e.name}</option>
+                  )}
+            </select>
+            <select id='letterswitch' className='selector' onChange={(e)=>{Letter(e)}}>
+              <option value='AZ'>A-Z</option>
+              <option value='ZA'>Z-A</option>
+            </select>
+            <select id='weightswitch' className='selector' onChange={(e)=>Peso(e)}>
+              <option value='def'>Filtrar por peso</option>
+              <option value='Desc'>Mayor a menor</option>
+              <option value='maM'>Menor a mayor</option>
+          </select>
+        </div>
+          
       </div>
     );
 };

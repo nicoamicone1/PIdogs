@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom'
+import './Create.css'
 
 const reg=/^[a-zA-Z]*$/
 const regnum=/^[0-9]*$/
@@ -33,6 +34,7 @@ export default function Create() {
     },[])
 
     React.useEffect(()=>{
+      setReady(()=>false);
       if(error.name===false){
         if(error.pes_min===false){
           if(error.pes_max===false){
@@ -88,6 +90,7 @@ export default function Create() {
         <Link to='/find'>
           <button>Volver</button>
         </Link>
+        <h1>Crear</h1>
         <form onSubmit={(e)=>{
           e.preventDefault();
           axios.post('http://localhost:3001/dog',{
@@ -98,28 +101,55 @@ export default function Create() {
             "temps": ts
           });
           alert('Creado con exito!')
-        }}>
+        }}>  
+            <div className='inputerr'>
             <input type='text' placeholder='Nombre' name='namecreated'onChange={(e)=>change(e)}/>
-            {error.name? <p>{error.name}</p>: null}
-            <input type='text' placeholder='Altura Maxima'name='alt_max'onChange={(e)=>change(e)}/>
-            {error.alt_max? <p>{error.alt_max}</p>: null}
+            {error.name? <span>{error.name}</span>: null}
+            </div>
+            
+            <div className='double'>
+            <div className='inputerr'>
             <input type='text' placeholder='Altura Minima'name='alt_min'onChange={(e)=>change(e)}/>
-            {error.alt_min? <p>{error.alt_min}</p>: null}
-            <input type='text' placeholder='Peso Maximo'name='pes_max'onChange={(e)=>change(e)}/>
-            {error.pes_max? <p>{error.pes_max}</p>: null}
+            {error.alt_min? <span>{error.alt_min}</span>: null}
+            </div>
+            <div className='inputerr'>
+            <input type='text' placeholder='Altura Maxima'name='alt_max'onChange={(e)=>change(e)}/>
+            {error.alt_max? <span>{error.alt_max}</span>: null}
+            </div>
+            </div>
+
+            <div className='double'>
+            <div className='inputerr'>
             <input type='text' placeholder='Peso Minimo'name='pes_min'onChange={(e)=>change(e)}/>
-            {error.pes_min? <p>{error.pes_min}</p>: null}
-            <input type='text' placeholder='Años de vida maximo'name='lifespan_max'onChange={(e)=>change(e)}/>
-            {error.lifespan_max? <p>{error.lifespan_max}</p>: null}
+            {error.pes_min? <span>{error.pes_min}</span>: null}
+            </div>
+            <div className='inputerr'>
+            <input type='text' placeholder='Peso Maximo'name='pes_max'onChange={(e)=>change(e)}/>
+            {error.pes_max? <span>{error.pes_max}</span>: null}
+            </div>
+            </div>
+
+            <div className='double'>
+            <div className='inputerr'>
             <input type='text' placeholder='Años de vida minimo'name='lifespan_min'onChange={(e)=>change(e)}/>
-            {error.lifespan_min? <p>{error.lifespan_min}</p>: null}
+            {error.lifespan_min? <span>{error.lifespan_min}</span>: null}
+            </div>
+            <div className='inputerr'>
+            <input type='text' placeholder='Años de vida maximo'name='lifespan_max'onChange={(e)=>change(e)}/>
+            {error.lifespan_max? <span>{error.lifespan_max}</span>: null}
+            </div>
+            </div>
+
+            <div className='tempscheck'>
             {temps.length?temps.map(e=>
-                <div>
+                <div className='tempcheck'>
                 <input type='checkbox' value={e.name} id={e.name} onClick={(e)=>clicktemp(e)}/>
                 <label for={e.name}>{e.name}</label>
                 </div>
             )
             :<div>Loading...</div>}
+            </div>
+            
             {ready?<input type='submit'/>:<input type='submit' disabled/>}
         </form>
       </div>

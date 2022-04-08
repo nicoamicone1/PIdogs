@@ -2,6 +2,7 @@ import React from 'react';
 import {useSelector,useDispatch} from 'react-redux'
 import {getDetail} from '../actions/index.js'
 import './Detail.css'
+import {Link} from 'react-router-dom'
 
 
 export default function Detail({id}) {
@@ -20,12 +21,19 @@ export default function Detail({id}) {
        perro[0]?
         <div className='Cont'>
             <div className='Carta'>
+                <div className='imagen'>
                 <img src={perro[0].image? perro[0].image.url : 'https://i.pinimg.com/originals/6d/f1/f8/6df1f8b5eb595358becaad1a8264e966.png' } alt='perroimg'/>
+                </div>
+                <div className='Desc'>
                 <span>{perro[0].name}</span>
                 <p>Temperament: {perro[0].temperament? perro[0].temperament : fix()}</p>
                 <p>Peso(kg): {perro[0].weight.metric}</p>
                 <p>Altura(cm): {perro[0].height.metric}</p>
                 <p>Esperanza de vida: {perro[0].life_span}</p>
+                <Link to='/find'>
+                    <button className='backbtn'>Back</button>
+                </Link>
+                </div>
             </div>
         </div>
         :<div>Loading...</div>

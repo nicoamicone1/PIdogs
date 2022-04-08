@@ -23,7 +23,9 @@ export default function SearchBar() {
             placeholder="Raza de perro..."
             onChange={(e)=>setBarra(()=>e.target.value)}
           />
+          <div className='botonbuscar'>
           <input type="submit" value='O'/>
+          </div>
         </form>
       </div>
     );

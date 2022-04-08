@@ -1,0 +1,75 @@
+.Creator{
+    position:absolute;
+    width:100%;
+    height:100%;
+    display:flex;
+    flex-direction: column;
+}
+.Creator h1{
+    color:white;
+    align-self: center;
+    font-family: 'Courgette', cursive;
+    font-size:8vh;
+}
+.Creator form{
+    width:50%;
+    align-self: center;
+}
+.Creator form input[type=text]{
+    width:100%
+}
+.double{
+    display:flex;
+    flex-direction: row-reverse;
+}
+.double input{
+    width:50%;
+}
+.tempscheck{
+    display:flex;
+    flex-wrap: wrap;
+    background-color: white;
+    opacity: 0.8;
+    border-radius: 20px;
+}
+.tempcheck{
+    width:33%;
+    height: 30px;
+    display:content;
+    color:black;
+    text-align: center;
+}
+.Creator form input[type=submit]{
+    width:100%;
+    height:5%;
+    opacity:1;
+    border-radius: 10px;
+}
+.inputerr{
+    display:flex;
+    flex-direction: column;
+    width:100%
+}
+.inputerr span{
+    font-size:2vh;
+}
+.Creator button{
+    position:absolute;
+    margin:3vh;
+    transition-duration: 0.4s;
+    background-color: white;
+    opacity:0.7;
+    color: black;
+    border: 2px solid rgb(0, 119, 255);
+    border-radius: 7px;
+    width:7vw;
+    height:6vh;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+.Creator button:hover{
+    opacity:1;
+    background-color: rgb(0, 119, 255);
+    color: white;
+}

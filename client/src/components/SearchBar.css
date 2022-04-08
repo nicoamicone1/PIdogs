@@ -7,6 +7,11 @@
     height: 100%;
     margin-top:30px;
 }
+.SearchBar form{
+    display: flex;
+    justify-content: center;
+}
+
 input[type=text] {
     width: 80%;
     padding: 12px 20px;
@@ -22,7 +27,8 @@ input[type=text] {
 input[type=text]:focus {
     border: 3px solid rgb(0, 0, 0);
 }
-input[type=submit]{
+.botonbuscar{align-self:center}
+.botonbuscar input[type=submit]{
     /* background-color: rgb(76, 0, 255); */
     background: url('https://www.pngmart.com/files/8/Search-Button-PNG-HD-Quality.png');
     background-size:30px 30px;
@@ -41,6 +47,6 @@ input[type=submit]{
     transition: 0.5s;
     font-weight: bold;
 }
-input[type=submit]:hover {
+.botonbuscar input[type=submit]:hover {
     opacity:1;
 }

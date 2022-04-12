@@ -1,10 +1,11 @@
 const express = require('express');
 const server=express()
-const {Dog,Temperament,conn}=require('../db.js')
+const {Dog,Temperament}=require('../db.js')
 const axios=require('axios')
+const {APIKEY} = process.env;
 
 const getApi=async function(){
-    let perros=await axios("https://api.thedogapi.com/v1/breeds")
+    let perros=await axios(`https://api.thedogapi.com/v1/breeds?api_key=${APIKEY}`)
     return perros.data;
 }
 

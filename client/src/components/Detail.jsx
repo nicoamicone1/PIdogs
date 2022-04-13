@@ -1,6 +1,6 @@
 import React from 'react';
 import {useSelector,useDispatch} from 'react-redux'
-import {getDetail} from '../actions/index.js'
+import {getDetail,getDogs} from '../actions/index.js'
 import './Detail.css'
 import {Link} from 'react-router-dom'
 
@@ -13,6 +13,7 @@ export default function Detail({id}) {
         // eslint-disable-next-line
     },[dispatch])
     const perro=useSelector((state)=>state.detail)
+    console.log(perro)
     const fix=()=>{
         let arr=perro[0].temperaments.map(e=>e.name);
         return arr.join(', ');
@@ -31,7 +32,7 @@ export default function Detail({id}) {
                 <p>Altura(cm): {perro[0].height.metric}</p>
                 <p>Esperanza de vida: {perro[0].life_span}</p>
                 <Link to='/find'>
-                    <button className='backbtn'>Back</button>
+                    <button className='backbtn' onClick={()=>dispatch(getDogs())}>Back</button>
                 </Link>
                 </div>
             </div>

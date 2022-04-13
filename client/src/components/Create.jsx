@@ -97,7 +97,7 @@ export default function Create() {
             "name": `${obj.name[0].toUpperCase()+obj.name.slice(1)}`,
             "weight": {"metric":`${obj.pes_min} - ${obj.pes_max}`},
             "height":{"metric":`${obj.alt_min} - ${obj.alt_max}`},
-            "life_span": `${obj.lifespan_min} - ${obj.lifespan_max}`,
+            "life_span": `${obj.lifespan_min} - ${obj.lifespan_max} years`,
             "temps": ts
           });
           alert('Creado con exito!')

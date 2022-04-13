@@ -44,9 +44,9 @@ export default function Filter() {
           <Link to='/create'>
             <button>CREATE</button>
           </Link>
-          <label class="switch">
+          <label className="switch">
             <input type='checkbox' value='Created' id='createdcheck' onClick={()=>Created()}/>
-            <span class="slider round"></span>
+            <span className="slider round"></span>
           </label>
           <label for="createdcheck">Created</label>
         </div>

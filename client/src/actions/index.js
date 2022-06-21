@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const api='http://localhost:3001/dogs';
+const api='https://api.thedogapi.com/v1/breeds';
 
 export function getDogs(){
     return async function(dispatch){
